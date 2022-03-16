@@ -1,3 +1,20 @@
-<h1>Hello Ruby Alejo</h1>
-<p> La idea en esta página es tener un espacio para crear un nuevo artículo</p>
+<h1>Listado de artículos existentes</h1>
 
+<table>
+  <tr>
+    <th>id</th>
+    <th>Titulo</th>
+    <th>Descripción</th>
+    <th></th>
+  </tr>
+
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.id %></td>
+      <td><%= article.title %></td>
+      <td><%= article.text %></td>
+      <td><%= link_to 'Ver', article_path(article) %></td>
+       
+    </tr>
+  <% end %>
+</table>

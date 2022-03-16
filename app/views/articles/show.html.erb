@@ -1,9 +1,14 @@
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+
+<caption><h3 align="center" style="color:blue">ARTÍCULO Nº <%= @article.id %> </h3></caption>
+<HR align="left" size="2" width="1420" color="black" noshade>
+<br><br>
+<table>
+  <tr>
+    <th align="left">Título: </th>
+    <td><%= @article.title %></td>
+  </tr>
+    <th align="left">Descripción:</th>
+    <td><%= @article.text %></td>
+  </tr>
+</table>
