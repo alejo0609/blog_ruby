@@ -1,8 +1,7 @@
 
 
-<caption><h3 align="center" style="color:blue">ARTÍCULO Nº <%= @article.id %> </h3></caption>
-<HR align="left" size="2" width="1420" color="black" noshade>
-<br><br>
+<caption><h3 align="left" style="color:black">ARTÍCULO Nº <%= @article.id %> </h3></caption>
+
 <table>
   <tr>
     <th align="left">Título: </th>
@@ -13,6 +12,43 @@
   </tr>
 </table>
 
+<HR align="left" size="2" width="1420" color="black" noshade>
+
+<h2>Commentarios</h2>
+<% @article.comments.each do |comment| %>
+  <p>
+    <strong>Título Comentario:</strong>
+    <%= comment.commenter %>
+  </p>
+
+  <p>
+    <strong>Comentario:</strong>
+    <%= comment.body %>
+  </p>
+<% end %>
+
+
+<HR align="left" size="2" width="1420" color="black" noshade>
+
+
+
+<h2>Añadir un comentario:</h2>
+<%= form_with model: [ @article, @article.comments.build ], local: true do |form| %>
+  <p>
+    <%= form.label :Comentario %><br>
+    <%= form.text_field :commenter %>
+  </p>
+  <p>
+    <%= form.label :Texto %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit :"Guardar comentario" %>
+  </p>
+<% end %>
+
+
+<HR align="left" size="2" width="1420" color="black" noshade>
 
 
 <ul>
