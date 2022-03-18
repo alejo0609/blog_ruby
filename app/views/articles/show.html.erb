@@ -2,61 +2,27 @@
 
 <caption><h3 align="left" style="color:black">ARTÍCULO Nº <%= @article.id %> </h3></caption>
 
-<table>
-  <tr>
-    <th align="left">Título: </th>
-    <td><%= @article.title %></td>
-  </tr>
-    <th align="left">Descripción:</th>
-    <td><%= @article.text %></td>
-  </tr>
-</table>
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
 
-<HR align="left" size="2" width="1420" color="black" noshade>
+<p>
+  <strong>Text:</strong>
+  <%= @article.text %>
+</p>
 
-<h2>Commentarios</h2>
-<% @article.comments.each do |comment| %>
-  <p>
-    <strong>Título Comentario:</strong>
-    <%= comment.commenter %>
-  </p>
+<h2>Comentarios</h2>
+<%= render @article.comments %> 
 
-  <p>
-    <strong>Comentario:</strong>
-    <%= comment.body %>
-  </p>
-<% end %>
+<h2>Ingrese un comentario:</h2>
+
+<%= render 'comments/form' %> 
 
 
 <HR align="left" size="2" width="1420" color="black" noshade>
-
-
-
-<h2>Añadir un comentario:</h2>
-<%= form_with model: [ @article, @article.comments.build ], local: true do |form| %>
-  <p>
-    <%= form.label :Comentario %><br>
-    <%= form.text_field :commenter %>
-  </p>
-  <p>
-    <%= form.label :Texto %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit :"Guardar comentario" %>
-  </p>
-<% end %>
-
-
-<HR align="left" size="2" width="1420" color="black" noshade>
-
 
 <ul>
   <li><%= link_to "Editar", edit_article_path(@article) %></li>
-  <li><%= link_to "Eliminar", article_path(@article), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "¿Esta seguro?"
-                  } %></li>
-  <br>
   <li><%= link_to 'Página anterior', articles_path %></li>
 </ul>

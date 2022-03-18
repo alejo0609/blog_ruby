@@ -1,0 +1,13 @@
+<%= form_with model: [ @article, @article.comments.build ], local: true do |form| %>
+  <p>
+    <%= form.label :"Título del comentario" %><br>
+    <%= form.text_field :commenter %>
+  </p>
+  <p>
+    <%= form.label :"Texto del comentario" %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit :"Guardar comentario" %>
+  </p>
+<% end %>
