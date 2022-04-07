@@ -1,0 +1,12 @@
+
+<%= form_with model: [ @article, @article.ratings.build ], local: true do |form| %>
+<br>
+  <h4>Calificar de 1-5 </h4>
+    <%= form.number_field :value %>
+  <br>
+  
+  <p>
+    <br>
+    <%= form.submit :"Save" %>
+  </p><br>
+<% end %>

@@ -1,0 +1,21 @@
+<h1>USERS</h1>
+
+
+<div>
+	
+	<% @users.each do |user| %>
+	<br>
+	<h4> Nombre: </h4><%= user.name %> 
+	<h4> Apellidos: 	</h4><%= user.last_name %>
+	<h4> Correo electrónico:	</h4><%= user.email %>
+	<br>
+	<%= link_to "Eliminar", user_path(user), data: {
+                  turbo_method: :delete,
+                  turbo_confirm: "¿Esta seguro?"
+                } %>
+                <br>
+    <HR align="left" size="2" width="1420" color="black" noshade></HR>
+	<% end %>
+	
+</div>
+

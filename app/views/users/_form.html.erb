@@ -1,0 +1,47 @@
+
+<h2 class="titulo_2">Formulario de registro</h2>
+
+<!--FORMULARIO-->
+<div action="" id="registrar_usuario_form" >
+    <div class="form">
+        <%= form_with  model: @user, local: true do |form| %>
+            
+            <div class="grupo">
+                <%= form.text_field :name %><span class="barra"></span>
+                <label for="">Nombre</label>
+            </div> 
+
+            <div class="grupo">
+                <%= form.text_field :last_name %>
+                <label for="">Apellidos</label>   
+            </div>
+
+            <div class="grupo">
+                <%= form.text_field :email %>
+                <label for="">Email</label>  
+            </div>
+
+            <div class="grupo">
+                <%= form.text_field :password %>
+                <label for="">Password</label>
+            </div>
+
+            <div class="grupo">
+                <%= form.text_field :confirm_password %>
+                <label for="">Repet Password</label>
+            </div>
+             
+            <div id="enviar_registro" type="button"><%= form.submit :"Registrarse" %></div>   
+               
+        <% end %>
+    </div>
+</div>
+
+<br><br>
+
+
+
+<caption><h2 align="center" style="color:black"><%= link_to 'INICIO', controller: 'welcome' %></h2></caption>
+<br>
+<br><br><br>
+

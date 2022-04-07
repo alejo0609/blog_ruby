@@ -1,13 +1,17 @@
+<HR align="left" size="2" width="1420" color="black" noshade>
+<br>
+<h3>Nuevo Comentario</h3>
+<!--FORMULARIO-->
 <%= form_with model: [ @article, @article.comments.build ], local: true do |form| %>
-  <p>
-    <%= form.label :"Título del comentario" %><br>
+  <br>
+  <p>Título del comentario</p>
     <%= form.text_field :commenter %>
-  </p>
-  <p>
-    <%= form.label :"Texto del comentario" %><br>
-    <%= form.text_area :body %>
-  </p>
+  <br><br><br>
+  <p>Texto del comentario </p><br>
+    <%= form.rich_text_area :body %>
+  <br>
   <p>
     <%= form.submit :"Guardar comentario" %>
   </p>
+  <br>
 <% end %>

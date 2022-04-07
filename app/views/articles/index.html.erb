@@ -1,32 +1,39 @@
-<br>
-<p> Crear un nuevo artículo <%= link_to "aquí", new_article_path %></p>
 
-<h1>Listado de artículos existentes</h1>
-
-<table>
-  <tr>
-    <th>id</th>
-    <th>Titulo</th>
-    <th>Descripción</th>
-    <th colspan="3"></th>
-    <th></th>
-  </tr>
-
-  <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.id %></td>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= link_to 'Ver', article_path(article) %> </td>
-      <td><%= link_to 'Editar', edit_article_path(article) %></td>
-      <td><%= link_to "Eliminar", article_path(article), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "¿Esta seguro?"
-                  } %></td>
-    </tr>
-  <% end %>
-</table>
 
 <br>
-<%= link_to "Inicio", controller: "welcome" %>
+<caption><h2 align="left" style="color:black"><%= link_to "NEW ARTICLE", new_article_path, :class    => "button", :method => :get    %></h2></caption>
 <br>
+
+<p> <h2 align="center" style="color:black">ARTICLES</h2> </p><br>
+
+<HR align="left" size="2" width="1420" color="black" noshade>
+
+<% @articles.each do |article| %>
+  <ul>
+    <table>
+      <tr>
+        <td><h4> <%= link_to article.title, article_path(article) %> </h4></td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td><%= article.text %></td>
+      </tr>
+    </table>
+    <br>
+    <td><%= link_to 'Editar', edit_article_path(article) %></td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td><%= link_to "Eliminar", article_path(article), data: {
+                  turbo_method: :delete,
+                  turbo_confirm: "¿Esta seguro?"
+                } %></td>
+    
+    <HR align="left" size="2" width="1420" color="black" noshade>
+    
+  </ul>
+<% end %>
+
+
+
+<br>
+<caption><h2 align="center" style="color:black"><%= link_to 'INICIO', controller: 'welcome' %></h2></caption>
+<br>
+
+

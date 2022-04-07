@@ -13,3 +13,94 @@
  *= require_tree .
  *= require_self
  */
+
+
+ 
+
+/* Formulario de registro */
+.titulo_2{
+    color: rgb(31,30,110);
+    font-size: 30px;
+    text-align: center;
+    padding-top: 140px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 30px;
+    }
+#registrar_usuario_form{
+background: #a8c0ff;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #3f2b96, #a8c0ff);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #3f2b96, #a8c0ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+margin-top: 30px;
+box-shadow: 0 0 6px 0 rgba(132,124,172,1);
+border-radius: 20px;
+border: none;
+display: flex;
+justify-content: center; 
+width: fit-content;
+margin: 0 auto;
+font-family: 'Poppins', sans-serif;
+}
+#registrar_usuario_form input{
+    color: #c6c6c6;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    border: none;
+    border-radius: 10px;
+    width: 100%;    
+}
+.form{
+    width: 600px;
+    margin: auto;
+}
+form .grupo{
+    position: relative;
+    margin: 45px;
+}
+:root{
+    --colorTextos: #5e5d5d;
+}
+input:focus{
+    outline: none;
+    color: #5e5d5d;
+}
+label{
+    color: var(--colorTextos);
+    font-size: 16px;
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    transition: 0.5s ease-in-out all;
+    pointer-events: none;
+}
+input:focus~label,input:valid~label{
+    top: -18px;
+    font-size: 14px;
+    color: #fff;
+}
+/* Boton enviar registro */
+#enviar_registro{
+    font-family: 'Poppins', sans-serif;
+    background: none;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    color: #fff;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+#enviar_registro:hover,#enviar_registro:focus{
+    background: #fff;
+    color: rgb(31,30,110);
+}
+/* Para que sea adaptable */
+@media screen and (max-width:500px) {
+    .form{
+        width: 80%;
+    }
+}

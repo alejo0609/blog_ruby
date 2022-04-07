@@ -1,16 +1,18 @@
+<br>
 <p>
-  <strong>Commenter:</strong>
+  <strong>Comentario:</strong>
   <%= comment.commenter %>
 </p>
-
+<br>
 <p>
-  <strong>Comment:</strong>
+  <strong>Descripción:</strong>
   <%= comment.body %>
 </p>
-
+<br>
 <%= link_to "Eliminar Comentario",[comment.article,comment],
   data:{
     turbo_method: :delete,
     turbo_confirm: "Esta seguro de eliminar el comentario?"
   }
 %>
+<br><br>

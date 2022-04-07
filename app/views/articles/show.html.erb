@@ -1,28 +1,62 @@
 
-
-<caption><h3 align="left" style="color:black">ARTÍCULO Nº <%= @article.id %> </h3></caption>
-
+<br>
+<h2>ARTÍCULO</h2>
+<br>
 <p>
-  <strong>Title:</strong>
-  <%= @article.title %>
+  <strong>Título:</strong>
+    <%= @article.title %>
 </p>
-
+<br>  
 <p>
-  <strong>Text:</strong>
+  <strong>Texto:</strong>
   <%= @article.text %>
 </p>
+<ul>
+<br>
+  <li><%= link_to "Edit Article", edit_article_path(@article) %></li>
+</ul>
+<br>
 
-<h2>Comentarios</h2>
+  <%= render 'ratings/form' %>
+
+
+
+
+
+
+<HR align="left" size="2" width="1420" color="black" noshade>
+<br>
+<h2>CALIFICACIONES</h2>
+<br>
+<h3><%= @article.estrellas %> <%= @article.promedio %> de 5</h3>
+<p><%= @article.rating_count %> calificaciones globales</p>
+<br>
+<h5>5 Estrellas * * * * * <%= @article.promedio_5 %>%</h5>
+<h5>4 Estrellas * * * * <%= @article.promedio_4 %>%</h5>
+<h5>3 Estrellas * * * <%= @article.promedio_3 %>%</h5>
+<h5>2 Estrellas * * <%= @article.promedio_2 %>%</h5>
+<h5>1 Estrellas * <%= @article.promedio_1 %>%</h5>
+<br> 
+
+
+
+
+
+<HR align="left" size="2" width="1420" color="black" noshade>
+<br>
+<h2>COMENTARIOS</h2>
+<br>
+<h3>Total comentarios = <%= @article.comments.count %></h3>
+<br>
+<HR align="left" size="2" width="1420" color="black" noshade>
+
+
 <%= render @article.comments %> 
-
-<h2>Ingrese un comentario:</h2>
-
 <%= render 'comments/form' %> 
-
 
 <HR align="left" size="2" width="1420" color="black" noshade>
 
 <ul>
-  <li><%= link_to "Editar", edit_article_path(@article) %></li>
   <li><%= link_to 'Página anterior', articles_path %></li>
 </ul>
+<br><br><br>
