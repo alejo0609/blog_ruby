@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :uses
+  devise_for :users
   get 'welcome/index'
 
   resources :articles
@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   # Cambiar en caso tal por esta: 
   # root 'welcome#index'
   
-  resources :users do
-      resources :articles
+ 
+    resources :articles do
       resources :comments
       resources :ratings 
       
